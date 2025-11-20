@@ -83,8 +83,6 @@ export default class ReactTouchpad extends Component {
   static propTypes = PROP_TYPES;
   static defaultProps = DEFAULT_PROPS;
 
-  emitStop = this.props.onStop;
-
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -103,8 +101,11 @@ export default class ReactTouchpad extends Component {
     });
     this.direction = null;
     this.isMoving = false;
+    this.direction = null;
+    this.isMoving = false;
     this.node = createRef();
     this.trackingPoints = [];
+    this.emitStop = this.props.onStop;
   }
 
   componentDidMount() {
